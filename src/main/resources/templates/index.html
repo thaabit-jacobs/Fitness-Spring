@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+</head>
+<body>
+<h1>Persons table</h1>
+<table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Height</th>
+        <th>Weight</th>
+    </tr>
+    <tr th:each="person : ${persons}">
+        <th th:text="${person.firstName}"></th>
+        <th th:text="${person.lastName}"></th>
+        <th th:text="${person.email}"></th>
+        <th th:text="${person.age}"></th>
+        <th th:text="${person.height}"></th>
+        <th th:text="${person.weight}"></th>
+    </tr>
+</table>
+
+<h1>Exercises table</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Area Affected</th>
+    </tr>
+    <tr th:each="exercise : ${exercises}">
+        <th th:text="${exercise.id}"></th>
+        <th th:text="${exercise.name}"></th>
+        <th th:text="${exercise.areaffectedType}"></th>
+    </tr>
+</table>
+
+<h1>Exercises performance table</h1>
+<table>
+    <tr>
+        <th>Exercise id</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Max weight lifted</th>
+        <th>Date</th>
+    </tr>
+    <tr th:each="performance : ${performances}">
+        <th th:text="${performance.exerciseId}"></th>
+        <th th:text="${performance.sets}"></th>
+        <th th:text="${performance.reps}"></th>
+        <th th:text="${performance.maxWeight}"></th>
+        <th th:text="${performance.performedAt}"></th>
+    </tr>
+</table>
+</body>
+</html>
